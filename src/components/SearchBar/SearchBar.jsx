@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./search.style.css";
+
 class Bar extends React.Component {
   constructor(props) {
     super(props);
@@ -9,19 +11,28 @@ class Bar extends React.Component {
   }
 
   searchTerm = () => {
-    if (this.state.term) this.props.out();
+    if (this.state.term) this.props.out(this.state.term);
   };
 
   render() {
     return (
-      <div>
-        <input
-          type="text"
-          name="term"
-          id="term"
-          onChange={e => this.setState({ term: e.target.value })}
-        />
-        <input type="button" value="Search" onClick={this.searchTerm} />
+      <div className="search-input">
+        <h4>Now, search for the data 👇</h4>
+        <form onSubmit={e => e.preventDefault()}>
+          <input
+            type="text"
+            name="term"
+            id="term"
+            onChange={e => this.setState({ term: e.target.value })}
+            autoFocus={true}
+          />
+          <input
+            type="submit"
+            value="Search"
+            onClick={this.searchTerm}
+            id="search"
+          />
+        </form>
       </div>
     );
   }

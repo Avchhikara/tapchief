@@ -1,0 +1,34 @@
+.para-input {
+  width: 100%;
+  color: white;
+}
+
+.para-input textarea,
+.para-input input {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.para-input textarea {
+  font-size: large;
+}
+
+.para-input input {
+  padding: 20px;
+  border: 2px solid red;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.para-input input:hover {
+  background-color: white;
+  color: red;
+  cursor: pointer;
+  transform: scaleX(1.01);
+}
+
+.para-input textarea:focus {
+  outline: red solid 2px;
+}

@@ -2,6 +2,8 @@ import React from "react";
 
 import Input from "./Input";
 
+import "./para.style.css";
+
 class Para extends React.Component {
   constructor(props) {
     super(props);
@@ -15,16 +17,17 @@ class Para extends React.Component {
   };
 
   onNext = () => {
-    this.props.next(this.state.para);
+    if (this.state.para.length) this.props.next(this.state.para);
   };
 
   render() {
     return (
-      <React.Fragment>
-        <Input set={this.setPara} />
+      <div className="para-input">
+        <h3>Enter the doc to be indexed, then press next</h3>
+        <Input set={this.setPara} autoFocus={true} />
 
         <input type="button" value="Next 👉" onClick={this.onNext} />
-      </React.Fragment>
+      </div>
     );
   }
 }

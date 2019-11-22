@@ -1,0 +1,15 @@
+.out,
+.no-result {
+  color: white;
+  margin-top: 20px;
+}
+
+.out {
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.out p {
+  width: 100%;
+}
